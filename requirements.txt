@@ -1,0 +1,10 @@
+torch
+torchvision
+pytorch_lightning
+torchmetrics
+hydra-core
+pandas
+tifffile
+scikit-learn
+matplotlib
+rasterio

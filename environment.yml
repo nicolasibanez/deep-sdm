@@ -1,0 +1,25 @@
+name: malpolon
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch
+  - pytorch-cuda=11.6
+  - torchvision
+  - torchmetrics
+  - pytorch-lightning
+  - hydra-core
+  - sphinx
+  - sphinx_rtd_theme
+  - pandas
+  - tifffile
+  - scikit-learn
+  - matplotlib
+  - rasterio
+  - pip
+  - pip:
+    - hydra-core
+prefix: /home/tlorieul/miniconda3/envs/malpolon
