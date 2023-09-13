@@ -1,0 +1,74 @@
+trainer:
+  accelerator: gpu
+  max_epochs: 10
+  val_check_interval: 0.1
+  gradient_clip_val: 0.2
+model:
+  provider_name: torchvision
+  model_name: resnet50
+  model_kwargs:
+    weights: null
+  modifiers:
+    change_last_layer:
+      num_outputs: 38
+      flatten: false
+      softmax: true
+    change_first_convolutional_layer:
+      num_input_channels: 29
+optimizer:
+  lr: 0.01
+  weight_decay: 0.0001
+  momentum: 0.9
+  nesterov: true
+  loss_weights:
+  - 9998
+  - 9991
+  - 8908
+  - 2022
+  - 9999
+  - 9986
+  - 4855
+  - 9996
+  - 705
+  - 2767
+  - 9996
+  - 9992
+  - 2446
+  - 2160
+  - 9991
+  - 9998
+  - 9993
+  - 10000
+  - 6240
+  - 9973
+  - 1064
+  - 7928
+  - 9974
+  - 9980
+  - 9996
+  - 9973
+  - 9952
+  - 7394
+  - 9974
+  - 9984
+  - 9937
+  - 9963
+  - 9835
+  - 9941
+  - 9721
+  - 9981
+  - 9964
+  - 8676
+data:
+  dataset_path: /mounts/Datasets4/DeepOcean/
+  dataset_name: training.csv
+  train_batch_size: 256
+  inference_batch_size: 32
+  num_workers: 16
+  ignore_indices: []
+  pin_memory: true
+other:
+  train_from_checkpoint: true
+  ckpt_path: /mounts/Datasets4/DeepOcean/outputs/multi38/
+  ckpt_name: checkpoint-epoch=09--val_f1=0.5995.ckpt
+  comment: Added hemisphere data - continue training

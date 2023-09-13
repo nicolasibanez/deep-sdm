@@ -1,6 +1,6 @@
 hydra:
   run:
-    dir: /home/gaetan/multi38/outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+    dir: /usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_24/project/deep-sdm/outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
   job:
     chdir: true
 
@@ -32,8 +32,8 @@ optimizer:
   loss_weights: [9998, 9991, 8908, 2022, 9999, 9986, 4855, 9996, 705, 2767, 9996, 9992, 2446, 2160, 9991, 9998, 9993, 10000, 6240, 9973, 1064, 7928, 9974, 9980, 9996, 9973, 9952, 7394, 9974, 9984, 9937, 9963, 9835, 9941, 9721, 9981, 9964, 8676]
 
 data:
-  dataset_path: "/home/gaetan/multi38/data"
-  dataset_name: "datasets/all_v2_oceans+h_clean.csv"
+  dataset_path: "/mounts/Datasets4/DeepOcean"
+  dataset_name: "training.csv"
   train_batch_size: 256
   inference_batch_size: 32
   num_workers: 16
@@ -42,6 +42,6 @@ data:
 
 other:
   train_from_checkpoint: false
-  ckpt_path: "/home/gaetan/multi38/outputs/multi38/"
-  ckpt_name: "2023-07-24_07-49-49/checkpoint-epoch=08--val_f1=0.6036.ckpt"
+  ckpt_path: "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_24/project/deep-sdm/outputs/multi38"
+  ckpt_name: "checkpoint-epoch=08--val_f1=0.6036.ckpt"
   comment: "Removed time lag and without eke for interpretation study - continue training"
